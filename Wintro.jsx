@@ -37,17 +37,17 @@ const Wintro =()=>{
         </View>
     );
 }
-const style=StyleSheet.create({
+const styles =StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'teal',
     },
     bg: {
-       flex: 1.
+       flex: 1,
     },
-    overLay: {
+    overlay: {
         flex: 1,
-        backgroundColor: 'rgba(9. 11, 12,0.8)',
+        backgroundColor: "rgba(9, 11, 12, 0.8)",
         justifyContent: 'center',
         alignItems: 'center',
     },

@@ -43,18 +43,36 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     elevation: 12, 
     borderWidth: 3,
-    borderColor: 'teal'
+    borderColor: 'teal',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center'
   },
   name: {
     marginTop: 12,
     fontSize: 18,
     color: '#fff',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center'
   },
   desc:{
     colr: '#fff',
     textAlign: "center",
     marginVertical: 14,
-    paddingHorizontal:20
+    paddingHorizontal:20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 14
+  }, 
+  btn: {
+    backgroundColor: 'teal',
+    paddingHorizontal: 28,
+    paddingVertical: 12,
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
   }
 });
