@@ -19,7 +19,7 @@ const Data = [
 const Team = ({navigation}) =>{
     return(
         <SafeAreaView style={styles.container}>
-            <TouchableOpacity onPress={()=> navigation.navigate("Login")}>
+            <TouchableOpacity onPress={()=> navigation.navigate("Welcome")}>
                 <Text style={styles.back}>← Back</Text>
             </TouchableOpacity>
             <Text style={styles.header}>Team Connect</Text>

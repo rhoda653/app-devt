@@ -10,8 +10,13 @@ const Welcome = ({navigation}) => {
                     <Image source={require('../assets/pic3.png')} resizeMode='contain' style={styles.img}/>
                 </View>
 
-                <Text style={styles.title}>Stay Connected</Text>
-                <Text style={styles.subText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore cupiditate distinctio debitis repellendus exercitationem ut?</Text>
+                <View style={styles.textContainer}>
+            <Text style={styles.text}>
+                Stays
+            </Text>
+            <Text style={styles.text2}>Connected</Text>
+            </View>
+                <Text style={styles.subText}>Lorem ipsum dolor . Labore cupiditate distinctio debitis repellendus exercitationem ut?</Text>
 
                 <TouchableOpacity onPress={()=>navigation.navigate("Login")}>
                     <View style={styles.btn}>
@@ -34,7 +39,7 @@ styles=StyleSheet.create({
       },
 
       imgContainer:{
-        width:300,
+        width:330,
         height:300
       },
       content:{
@@ -45,16 +50,33 @@ styles=StyleSheet.create({
       img:{
         width:'100%'
       },
-      title:{
-        fontSize:30,
+      textContainer:{
+        flexDirection:'row',
+        gap: 15
+      },
+      text:{
+        justifyContent:'center',
+        alignItems:'center',
+        fontSize:24,
         color:'#fff',
-        marginVertical:20
+        marginLeft:10,
+        marginTop:20,
+            fontWeight:'bold'
+        },
+        text2:{
+        justifyContent:'center',
+        alignItems:'center',
+        fontSize:24,
+        color:'orange',
+        marginTop:20,
+        fontWeight:'bold' 
       },
       subText:{
         color:'#ddd',
         alignSelf:'center',
         textAlign:'center',
-        fontSize:17
+        fontSize:15,
+        fontWeight:'bold'
       },
       btn:{
         backgroundColor:'#fff',
