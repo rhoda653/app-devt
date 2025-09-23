@@ -1,78 +1,113 @@
-import {Image, Text, Button, StyleSheet, View, StatusBar, TouchableOpacity} from 'react-native';
+// import {Image, Text, Button, StyleSheet, View, StatusBar, TouchableOpacity} from 'react-native';
+
+import { NavigationContainer } from "@react-navigation/native";
+
+// export default function App(){
+//   return(
+//     <View style={styles.container}>
+//       <StatusBar 
+//       barStyle={'light-content'} 
+//       backgroundColor="#000" 
+//       hidden={false}
+//       />
+
+//       {/* {image} */}
+//       <Image source={require("./assets/pic.png")} style={styles.avatar} />
+//       <Text style={styles.name}>Tamanjong Rhoda</Text>
+//       <Text style={styles.desc}> 
+//         I am a passionate learner, mission is to learn and change those around me,
+//         I am also a vegeterian
+//       </Text>
+//       {/* button title, read more */}
+//       <TouchableOpacity>
+//         <View style={styles.btn}>
+//         <Text style={styles.btnText}>Read More</Text>
+//         </View>
+//       </TouchableOpacity>
+
+//     </View>
+    
+//   );
+// }
+
+// // create a style sheet just below our component
+// // this isnot css but stylesheet inspired by css
+// const styles = StyleSheet.create({
+//   container: {
+//     backgroundColor: 'red',
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignitems: 'center'
+//   },
+//   avatar: {
+//     width: 200,
+//     height: 200,
+//     borderRadius: 100,
+//     elevation: 12, 
+//     borderWidth: 3,
+//     borderColor: 'teal',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     alignSelf: 'center'
+//   },
+//   name: {
+//     marginTop: 12,
+//     fontSize: 18,
+//     color: '#fff',
+//     fontWeight: 'bold',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     textAlign: 'center'
+//   },
+//   desc:{
+//     colr: '#fff',
+//     textAlign: "center",
+//     marginVertical: 14,
+//     paddingHorizontal:20,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     fontSize: 14
+//   }, 
+//   btn: {
+//     backgroundColor: 'teal',
+//     paddingHorizontal: 28,
+//     paddingVertical: 12,
+//     borderRadius: 8,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     alignSelf: 'center',
+//   }
+// });
+
+// import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Welcome from "./component/Welcome";
+import Login from "./component/Login";
+import Team from "./component/Team"
+
+const Stack = createNativeStackNavigator();
 
 export default function App(){
+  // configure navigation here
   return(
-    <View style={styles.container}>
-      <StatusBar 
-      barStyle={'light-content'} 
-      backgroundColor="#000" 
-      hidden={false}
-      />
+  <NavigationContainer>
+     {/* start configuring the various screens */}
+     <Stack.Navigator
+       initialRouteName="Welcome"
+       screenOptions={{
+        headerStyle:{
+          backgroundColor:'red',
+        },
+       }}
+       >
+       <Stack.Screen name="Welcome" component={Welcome} options={{headerShown:false}} />
 
-      {/* {image} */}
-      <Image source={require("./assets/pic.png")} style={styles.avatar} />
-      <Text style={styles.name}>Tamanjong Rhoda</Text>
-      <Text style={styles.desc}> 
-        I am a passionate learner, mission is to learn and change those around me,
-        I am also a vegeterian
-      </Text>
-      {/* button title, read more */}
-      <TouchableOpacity>
-        <View style={styles.btn}>
-        <Text style={styles.btnText}>Read More</Text>
-        </View>
-      </TouchableOpacity>
+       <Stack.Screen name="Login" component={Login} options={{title:"Login Screen", headerShown:false,
+        presentation:'modal', animation:'slide_from_bottom'
+       }}/>
 
-    </View>
-    
+       <Stack.Screen name="Team" component={Team} options={{title:"Our Team", headerShown:false}}/>
+     </Stack.Navigator>
+  </NavigationContainer>
   );
 }
-
-// create a style sheet just below our component
-// this isnot css but stylesheet inspired by css
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'red',
-    flex: 1,
-    justifyContent: 'center',
-    alignitems: 'center'
-  },
-  avatar: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    elevation: 12, 
-    borderWidth: 3,
-    borderColor: 'teal',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center'
-  },
-  name: {
-    marginTop: 12,
-    fontSize: 18,
-    color: '#fff',
-    fontWeight: 'bold',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center'
-  },
-  desc:{
-    colr: '#fff',
-    textAlign: "center",
-    marginVertical: 14,
-    paddingHorizontal:20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: 14
-  }, 
-  btn: {
-    backgroundColor: 'teal',
-    paddingHorizontal: 28,
-    paddingVertical: 12,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-  }
-});
